@@ -5,6 +5,7 @@ import 'package:provider_practice/constants/app_text_feild.dart';
 import 'package:provider_practice/constants/appcolour.dart';
 import 'package:provider_practice/constants/space_extension.dart';
 
+import '../constants/app_images.dart';
 import '../controller/loginController.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -105,6 +106,20 @@ class LoginScreen extends StatelessWidget {
                             SnackBar(content: Text("Login succesfully")));
                       }
                     }),
+                55.veritcal,
+
+                Text("Or Log in with "),
+                24.veritcal,
+
+                Container(
+                    height: 52,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Image.asset(AppImages.googleIcons))
+
               ],
             ),
           ),

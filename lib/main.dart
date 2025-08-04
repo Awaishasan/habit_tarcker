@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_practice/provider_test/counter_provider.dart';
+import 'package:provider_practice/screens/forget_password.dart';
 import 'package:provider_practice/screens/signup_screen.dart';
 
 import 'configuration/approuter.dart';
 
 import 'controller/counter_Controller.dart';
+import 'controller/forgetPassword_controller.dart';
 import 'controller/loginController.dart';
 import 'controller/signUpController.dart';
 
@@ -17,6 +19,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => CounterController()),
         ChangeNotifierProvider(create: (_) => SignupController()),
         ChangeNotifierProvider(create: (_) => LoginController()),
+        ChangeNotifierProvider(create: (_) => ForgetPasswordController()),
       ],
       child: MyApp(),
     ),
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRouter.loginScreen,
+      initialRoute: AppRouter.newPassword,
       routes: AppRouter.routes,
     );
   }
