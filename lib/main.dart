@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
@@ -41,8 +42,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRouter.newPassword,
-      routes: AppRouter.routes,
+      initialRoute: AppRouter.signupScreen,
+      onGenerateRoute: AppRouter.onGenerateRoute,
+      navigatorKey: AppRouter.key,
     );
   }
 }

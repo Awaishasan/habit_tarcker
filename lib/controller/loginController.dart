@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:provider_practice/configuration/approuter.dart';
 
 class LoginController extends ChangeNotifier{
 
@@ -27,6 +28,21 @@ class LoginController extends ChangeNotifier{
     _isSelected = value;
     notifyListeners();
   }
+
+
+  void gotoSignUpScreen(){
+    AppRouter.push(AppRouter.signupScreen);
+
+  }
+
+  void gotoForgetPasswordScreen(){
+    AppRouter.push(AppRouter.forgetPassword);
+  }
+
+
+
+
+
 
   // password feild toggle method
 

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_practice/configuration/approuter.dart';
 
 class SignupController extends ChangeNotifier{
 
@@ -27,6 +28,10 @@ class SignupController extends ChangeNotifier{
   void toggleConfrimPassword(){
     _isConfrimPasswordObscured = !_isConfrimPasswordObscured;
     notifyListeners();
+  }
+
+  void gotoLoginScreen(){
+    AppRouter.push(AppRouter.loginScreen);
   }
 
   @override

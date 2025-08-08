@@ -36,6 +36,7 @@ class ForgetPassword extends StatelessWidget {
                   builder: (context, value, child) => AppButton(
                       ontab: () {
                         if (_formKey.currentState!.validate()) {
+                          value.gotoOptScreen();
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text("Processing"),duration: Duration(seconds: 2),));
                         }

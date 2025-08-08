@@ -18,7 +18,7 @@ class AppTextFeild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   // final toggleProvider = Provider.of<SignupController>(context);
+
     return  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Container(
