@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:provider_practice/constants/app_button.dart';
 import 'package:provider_practice/constants/appcolour.dart';
@@ -18,8 +19,13 @@ class NewPassword extends StatelessWidget {
           Text("Enter new password",style: TextStyle(fontSize: 18),),
           46.veritcal,
           OtpTextField(
-            numberOfFields: 5,
+            numberOfFields: 6,
             borderColor: Color(0xFFEDEDED),
+            borderRadius: BorderRadius.circular(8),
+            keyboardType: TextInputType.number,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            filled:  true,
+            showCursor: true,
             showFieldAsBox: true,
             onCodeChanged: (String code) {
               // handle validation or live changes
