@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../screens/Homescreen/home_screen.dart';
 import '../screens/forget_password.dart';
 import '../screens/login_screen.dart';
 import '../screens/new_password.dart';
@@ -14,16 +15,11 @@ class AppRouter {
   static const String forgetPassword = "/forgetPassword";
   static const String otpScreen = "/otpScreen";
   static const String newPassword = "/newPassword";
+  static const String homeScreen = "/homeScreen";
 
   static final key = GlobalKey<NavigatorState>();
 
-  // static Map<String, WidgetBuilder>  get routes => {
-  //   signupScreen: (context)=> SignupScreen(),
-  //   loginScreen: (context)=> LoginScreen(),
-  //   forgetPassword: (context)=> ForgetPassword(),
-  //   otpScreen: (context)=> OtpScreen(),
-  //   newPassword: (context)=> NewPassword(),
-  // };
+
 
   static Route onGenerateRoute(RouteSettings settings) {
     debugPrint('Current Route: ${settings.name}');
@@ -42,6 +38,9 @@ class AppRouter {
 
         case newPassword:
         return _navigate(NewPassword());
+
+        case homeScreen:
+        return _navigate(HomeScreen());
 
       default:
         return _onRouteError();

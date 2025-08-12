@@ -15,6 +15,7 @@ import 'controller/forgetPassword_controller.dart';
 import 'controller/loginController.dart';
 import 'controller/signUpController.dart';
 import 'firebase_options.dart';
+import 'firebase_service/firebase_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,6 +31,7 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (_) => LoginController()),
         ChangeNotifierProvider(create: (_) => ForgetPasswordController()),
         ChangeNotifierProvider(create: (_) => ButtonPressProvider()),
+
 
       ],
       child: MyApp(),

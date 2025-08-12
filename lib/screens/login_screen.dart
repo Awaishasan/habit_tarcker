@@ -54,13 +54,13 @@ class LoginScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(right: 300),
                     child: Text(
-                      "Name",
+                      "Email",
                       style: TextStyle(fontSize: 15),
                     ),
                   ),
                   12.veritcal,
                   AppTextFeild(
-                      message: "Name", Controller: loginProvider.nameController),
+                      message: "Email", Controller: loginProvider.emailController),
                   40.veritcal,
                   Padding(
                     padding: const EdgeInsets.only(right: 280),
@@ -112,8 +112,8 @@ class LoginScreen extends StatelessWidget {
                       ontab: () {
                         if (_fromSate.currentState!.validate()) {
 
-                          ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text("Login succesfully")));
+                          // ScaffoldMessenger.of(context).showSnackBar(
+                          //     SnackBar(content: Text("Login succesfully")));   ScaffoldMessenger.of(context).showSnackBar(
                         }
                       }),
                   55.veritcal,

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider_practice/configuration/approuter.dart';
+import 'package:provider_practice/firebase_service/firebase_service.dart';
 
 class LoginController extends ChangeNotifier{
 
@@ -7,9 +8,11 @@ class LoginController extends ChangeNotifier{
 
   bool _isSelected = false;
 
+  final FirebaseService _firebaseService = FirebaseService();
 
 
-  final nameController = TextEditingController();
+
+  final emailController = TextEditingController();
   final PasswordController= TextEditingController();
 
 
@@ -37,6 +40,14 @@ class LoginController extends ChangeNotifier{
 
   void gotoForgetPasswordScreen(){
     AppRouter.push(AppRouter.forgetPassword);
+  }
+
+
+  void login() async {
+    final user = _firebaseService.loginWithEmailandPassword(
+        emailController.text.trim(), PasswordController.text.trim());
+    AppRouter.push(AppRouter.homeScreen);
+    print("User login successfully");
   }
 
 

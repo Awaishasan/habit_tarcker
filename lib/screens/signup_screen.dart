@@ -157,8 +157,8 @@ class SignupScreen extends StatelessWidget {
 
 
 
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("data store successfully")));
+                        // ScaffoldMessenger.of(context).showSnackBar(
+                        //     SnackBar(content: Text("data store successfully")));
                       }
                     },
                   ),),
