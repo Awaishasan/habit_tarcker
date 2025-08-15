@@ -107,28 +107,48 @@ class LoginScreen extends StatelessWidget {
                     ],
                   ),
                   70.veritcal,
-                  AppButton(
-                      btnName: "log in",
-                      ontab: () {
-                        if (_fromSate.currentState!.validate()) {
+                  Consumer<LoginController>(builder: (context, value, child) {
+                    return  AppButton(
+                        btnName: "log in",
+                        ontab: () {
+                          if (_fromSate.currentState!.validate()) {
+                            value.login();
 
-                          // ScaffoldMessenger.of(context).showSnackBar(
-                          //     SnackBar(content: Text("Login succesfully")));   ScaffoldMessenger.of(context).showSnackBar(
-                        }
-                      }),
+
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text("Login succesfully")));
+                          }});
+                  },),
+
                   55.veritcal,
 
                   Text("Or Log in with "),
                   24.veritcal,
 
-                  Container(
-                      height: 52,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Image.asset(AppImages.googleIcons))
+                  Consumer<LoginController>(builder: (context, value, child) => GestureDetector(
+                    onTap: (){
+                      value.googleLogIn();
+
+                    },
+                    child: Container(
+                        height: 52,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(color: Colors.grey.withOpacity(0.5)
+                                  ,blurRadius: 5,
+                                  spreadRadius: 5,
+                                  offset: Offset(4, 5)
+
+                              ),
+                            ]
+                        ),
+                        child: Image.asset(AppImages.googleIcons)),
+                  ),)
+
+
 
                 ],
               ),

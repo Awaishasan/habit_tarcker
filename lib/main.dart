@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRouter.signupScreen,
+      initialRoute: AppRouter.homeScreen,
       onGenerateRoute: AppRouter.onGenerateRoute,
       navigatorKey: AppRouter.key,
     );

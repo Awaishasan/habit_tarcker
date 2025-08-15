@@ -153,7 +153,8 @@ class SignupScreen extends StatelessWidget {
                     ontab: () {
                       if (_fromstate.currentState!.validate()) {
 
-                        value.gotoLoginScreen();
+
+                        value.sigin();
 
 
 
@@ -168,15 +169,33 @@ class SignupScreen extends StatelessWidget {
                   
                   Text("Or sign up with "),
                   20.veritcal,
+
+                  Consumer<SignupController>(builder: (context, value, child) => GestureDetector(
+                    onTap: (){
+                      value.googleSignIn();
+
+                    },
+                    child: Container(
+                        height: 52,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+
+                            boxShadow: [
+                              BoxShadow(color: Colors.grey.withOpacity(0.5)
+                                  ,blurRadius: 5,
+                                  spreadRadius: 5,
+                                  offset: Offset(4, 5)
+
+                              )
+
+                            ]
+                        ),
+                        child: Image.asset(AppImages.googleIcons)),
+                  ),)
                   
-                  Container(
-                      height: 52,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Image.asset(AppImages.googleIcons))
+
                 ],
               ),
             ),

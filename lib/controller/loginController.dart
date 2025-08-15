@@ -25,6 +25,12 @@ class LoginController extends ChangeNotifier{
     return _isPasswordObsurced;
   }
 
+
+   void clearFeilds(){
+    emailController.clear();
+    PasswordController.clear();
+    notifyListeners();
+   }
   // check box toggle method
 
   void onChange(bool value) {
@@ -48,10 +54,24 @@ class LoginController extends ChangeNotifier{
         emailController.text.trim(), PasswordController.text.trim());
     AppRouter.push(AppRouter.homeScreen);
     print("User login successfully");
+    clearFeilds();
+  }
+
+  void googleLogIn()async{
+      await _firebaseService.googleSignin();
+    AppRouter.push(AppRouter.homeScreen);
+
   }
 
 
 
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    PasswordController.dispose();
+    super.dispose();
+  }
 
 
 

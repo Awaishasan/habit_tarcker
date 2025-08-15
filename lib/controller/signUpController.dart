@@ -39,18 +39,34 @@ class SignupController extends ChangeNotifier{
     AppRouter.push(AppRouter.loginScreen);
   }
 
+  void clearFeilds(){
+    nameController.clear();
+    emailController.clear();
+    passwordController.clear();
+  }
+
   void sigin()async{
-    final user =  await _firebaseService.createUserEmailandPassword(emailController.text.trim(),passwordController.text.trim());
+    final user =  await _firebaseService.createUserEmailandPassword(
+        emailController.text.trim(),
+        passwordController.text.trim());
     if(user != null){
       final userModel = UserModel(
           uid: user.uid,
           email: user.email ?? "",
           userName: nameController.text.trim());
 
-
+      AppRouter.push(AppRouter.loginScreen);
       await _firebaseService.storeUserData(userModel);
+      clearFeilds();
 
     }
+
+  }
+
+  void googleSignIn()async{
+    await _firebaseService.googleSignin();
+    AppRouter.push(AppRouter.homeScreen);
+
 
   }
 
