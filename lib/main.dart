@@ -12,6 +12,7 @@ import 'configuration/approuter.dart';
 import 'controller/button_press_provider.dart';
 import 'controller/counter_Controller.dart';
 import 'controller/forgetPassword_controller.dart';
+import 'controller/home_Provider/home_controller.dart';
 import 'controller/loginController.dart';
 import 'controller/signUpController.dart';
 import 'firebase_options.dart';
@@ -31,6 +32,7 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (_) => LoginController()),
         ChangeNotifierProvider(create: (_) => ForgetPasswordController()),
         ChangeNotifierProvider(create: (_) => ButtonPressProvider()),
+        ChangeNotifierProvider(create: (_) => HomeController()),
 
 
       ],
@@ -47,7 +49,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRouter.homeScreen,
+      initialRoute: AppRouter.bottomNavigationbar,
       onGenerateRoute: AppRouter.onGenerateRoute,
       navigatorKey: AppRouter.key,
     );

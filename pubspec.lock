@@ -25,6 +25,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  bottom_navy_bar:
+    dependency: "direct main"
+    description:
+      name: bottom_navy_bar
+      sha256: ed54e0a18748106cc4d3648390bf94e88c0913db6bd3018dd30ab0810f0c26d6
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.1.0"
   characters:
     dependency: transitive
     description:
@@ -158,6 +166,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.1+1"
+  flutter_popup_menu_button:
+    dependency: "direct main"
+    description:
+      name: flutter_popup_menu_button
+      sha256: "3ddf95a0e9d9c42d16d18c31f23d7fae41ac212b20217c43d07d8582cdbfe0b2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1+5"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -320,6 +336,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
+  percent_indicator:
+    dependency: "direct main"
+    description:
+      name: percent_indicator
+      sha256: "157d29133bbc6ecb11f923d36e7960a96a3f28837549a20b65e5135729f0f9fd"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.5"
   plugin_platform_interface:
     dependency: transitive
     description:

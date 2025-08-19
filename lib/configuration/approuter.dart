@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../constants/bottom_navigationbar.dart';
 import '../screens/Homescreen/home_screen.dart';
 import '../screens/forget_password.dart';
 import '../screens/login_screen.dart';
@@ -16,6 +17,7 @@ class AppRouter {
   static const String otpScreen = "/otpScreen";
   static const String newPassword = "/newPassword";
   static const String homeScreen = "/homeScreen";
+  static const String bottomNavigationbar = "/bottomNavigationbar";
 
   static final key = GlobalKey<NavigatorState>();
 
@@ -41,6 +43,9 @@ class AppRouter {
 
         case homeScreen:
         return _navigate(HomeScreen());
+
+        case bottomNavigationbar:
+        return _navigate(BottomNavigationbar());
 
       default:
         return _onRouteError();
